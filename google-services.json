@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "366961503636",
+    "project_id": "khwakhanya-37011",
+    "storage_bucket": "khwakhanya-37011.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366961503636:android:e84d21fc000af99b87b381",
+        "android_client_info": {
+          "package_name": "com.groupfour.khwakhanyawelfare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJf-kCezN2DRq42RehQT0-yr9Deq5aXEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
