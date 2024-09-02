@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.googleDaggerHiltAndroid)
     alias(libs.plugins.googleDevtoolsKsp)
+    alias(libs.plugins.googleServices)
 }
 
 android {
@@ -64,7 +65,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     //TIMBER
     implementation(libs.com.jakewharton.timber)
-
+    //FIREBASE
+    implementation(platform(libs.com.google.firebase))
     //Testing Libs
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
