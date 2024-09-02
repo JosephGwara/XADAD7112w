@@ -1,4 +1,4 @@
-package com.groupfour.khwakhanyawelfare.presentation.home.ui.main
+package com.groupfour.khwakhanyawelfare.presentation.home
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

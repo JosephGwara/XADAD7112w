@@ -1,4 +1,4 @@
-package com.groupfour.khwakhanyawelfare.presentation.home.ui.main
+package com.groupfour.khwakhanyawelfare.presentation.home
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
