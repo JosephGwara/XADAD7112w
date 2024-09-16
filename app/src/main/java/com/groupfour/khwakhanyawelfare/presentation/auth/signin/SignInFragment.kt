@@ -21,9 +21,16 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSignInBinding.inflate(layoutInflater)
+        initListeners()
+        return binding.root
+    }
+
+    private fun initListeners(){
         binding.loginTxt.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_registrationFragment)
         }
-        return binding.root
+        binding.resetPasswordTxt.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_resetPasswordFragment)
+        }
     }
 }
