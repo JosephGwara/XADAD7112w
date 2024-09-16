@@ -21,9 +21,41 @@ class RegistrationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRegistrationBinding.inflate(layoutInflater)
-        binding.loginTxt.setOnClickListener {
-            findNavController().navigate(R.id.action_registrationFragment_to_signInFragment)
-        }
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initListeners()
+    }
+
+
+    private fun initListeners(){
+       binding.apply {
+           registerBtn.setOnClickListener {
+           validateUsername()
+
+               viewModel.validateUserDetails("jgwarix@gmail.com","Gwarix123456#","Gwarix23456#")
+           }
+         loginTxt.setOnClickListener {
+               findNavController().navigate(R.id.action_registrationFragment_to_signInFragment)
+
+           }
+
+       }
+    }
+
+    private fun validateUsername():Boolean{
+        val username = binding.usernameEditText.text.toString()
+        if (username.isEmpty() || username.isBlank() ){
+            //TODO Show Error to User that username is invalid
+            return false
+        }
+        else{
+            viewModel.validateUsername(username)
+            return true
+        }
+    }
+
+
 }

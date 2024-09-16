@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.com.jakewharton.timber)
     //FIREBASE
     implementation(platform(libs.com.google.firebase))
+    implementation(libs.firebase.auth)
     //Testing Libs
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
