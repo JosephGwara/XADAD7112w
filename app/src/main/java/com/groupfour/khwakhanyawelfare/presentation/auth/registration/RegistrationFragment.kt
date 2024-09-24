@@ -47,7 +47,6 @@ private fun initObservers(){
     private fun initListeners(){
        binding.apply {
            registerBtn.setOnClickListener {
-
               if (validateUsername() &&  validateEmail() && validateFirstPassword() && validateSecondPassword() && checkPasswordsMatch()){
                   progressBar.isVisible = true
                   viewModel.registerUser(binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
@@ -101,6 +100,8 @@ private fun initObservers(){
             binding.passwordEditText.error = "Please enter a password"
             return false
         }
+
+        //TODO Move validation strings to strings file
         else if (!validatePasswordPattern(firstPassword)){
             val errorText = when {
                 !firstPassword.contains(Regex(".*[A-Z].*")) -> "Password must contain one capital letter"
@@ -136,6 +137,10 @@ private fun initObservers(){
     private fun validatePasswordPattern(password: String):Boolean{
         val pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=])(?=\\S+\$).{6,}\$"
         return Pattern.compile(pattern).matcher(password).matches()
+    }
+
+    private fun navigateToOnboarding(){
+        //TODO Navigate to onboarding
     }
 
 
