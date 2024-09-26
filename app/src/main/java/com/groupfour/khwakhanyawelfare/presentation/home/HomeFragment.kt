@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
        initListeners()
        initObservers()
+    //TODO Add back button override to prevent navigation back to registration
     }
 
     private fun initObservers() {

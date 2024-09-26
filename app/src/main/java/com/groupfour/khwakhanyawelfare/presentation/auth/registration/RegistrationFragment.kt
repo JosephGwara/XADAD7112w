@@ -1,5 +1,6 @@
 package com.groupfour.khwakhanyawelfare.presentation.auth.registration
 
+import android.content.Intent
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Patterns
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.groupfour.khwakhanyawelfare.R
 import com.groupfour.khwakhanyawelfare.databinding.FragmentRegistrationBinding
+import com.groupfour.khwakhanyawelfare.presentation.onboarding.OnboardingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
 
@@ -41,7 +43,7 @@ private fun initObservers(){
     }
     viewModel.registrationSuccessful.observe(viewLifecycleOwner){ successful->
        binding.progressBar.isVisible = false
-        if (successful)Snackbar.make(binding.root,"RegistrationSuccessful",Snackbar.LENGTH_SHORT).show()
+        if (successful)navigateToOnboarding()
     }
 }
     private fun initListeners(){
@@ -140,8 +142,8 @@ private fun initObservers(){
     }
 
     private fun navigateToOnboarding(){
-        //TODO Navigate to onboarding
+        startActivity(Intent(requireContext(),OnboardingActivity::class.java))
+        requireActivity().finish()
     }
-
 
 }

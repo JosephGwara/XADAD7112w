@@ -17,10 +17,14 @@
         android:theme="@style/Theme.KhwaKhanyaWelfare"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.onboarding.OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.splashscreen.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,7 +33,7 @@
             android:exported="false" />
         <activity
             android:name=".presentation.auth.AuthActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
