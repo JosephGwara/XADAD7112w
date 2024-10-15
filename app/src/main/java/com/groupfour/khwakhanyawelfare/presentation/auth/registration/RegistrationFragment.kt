@@ -65,7 +65,7 @@ private fun initObservers(){
         val username = binding.usernameEditText.text.toString()
         val pattern = "^[A-Za-z]\\w{5,29}$"
         if (username.isEmpty() || username.isBlank() ){
-           binding.usernameEditText.error = "Please enter a username"
+           binding.usernameEditText.error = "Please enter a username" //TODO USE STRINGS
             return false
         }
         else if(!Pattern.compile(pattern).matcher(username).matches()) {

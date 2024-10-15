@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.groupfour.khwakhanyawelfare.data.models.User
+import com.groupfour.khwakhanyawelfare.util.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,7 +44,7 @@ private val TAG = this.javaClass.name
     }
 
     fun getUserOnboardingStatus(email: String) = viewModelScope.launch(Dispatchers.IO)  {
-        firestore.collection("users")
+        firestore.collection(Constants.FIREBASE_USER_COLLECTION)
             .document(email)
             .get()
             .addOnSuccessListener { document ->

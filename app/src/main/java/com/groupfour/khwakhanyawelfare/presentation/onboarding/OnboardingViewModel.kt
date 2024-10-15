@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.groupfour.khwakhanyawelfare.data.enums.UserType
 import com.groupfour.khwakhanyawelfare.data.models.User
+import com.groupfour.khwakhanyawelfare.util.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ class OnboardingViewModel  @Inject constructor(private val firebaseAuth: Firebas
         val userEmail = firebaseAuth.currentUser?.email
         if (userEmail != null){
             val user = User(userEmail,userType,true)
-            firestore.collection("users")
+            firestore.collection(Constants.FIREBASE_USER_COLLECTION)
                 .add(user)
                 .addOnSuccessListener { documentReference ->
                     Timber.d("$documentReference")
