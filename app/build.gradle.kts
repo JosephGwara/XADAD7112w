@@ -50,7 +50,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
@@ -69,8 +68,10 @@ dependencies {
     //FIREBASE
     implementation(platform(libs.com.google.firebase))
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     //Testing Libs
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

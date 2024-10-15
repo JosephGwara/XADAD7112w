@@ -34,7 +34,7 @@ class RegistrationViewModel @Inject constructor(private val firebaseAuth: Fireba
                         _registrationSuccessful.postValue(true)
 
                     }else if(task.exception?.message?.contains("The email address is already in use by another account")== true){
-                        Timber.tag(TAG).d("Failed to signUp, email already in use")
+                        Timber.tag(TAG).d("Failed to signUp, email already in use") //TODO Use String Resources
                         viewModelScope.launch {
                             withContext(Dispatchers.Main){
                                 _registrationError.postValue("Failed to Register, email already in use")

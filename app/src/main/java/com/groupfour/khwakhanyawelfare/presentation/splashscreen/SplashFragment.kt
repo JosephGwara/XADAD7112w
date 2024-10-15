@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.groupfour.khwakhanyawelfare.databinding.FragmentSplashBinding
 import com.groupfour.khwakhanyawelfare.presentation.auth.AuthActivity
 import com.groupfour.khwakhanyawelfare.presentation.home.HomeActivity
+import com.groupfour.khwakhanyawelfare.presentation.onboarding.OnboardingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
@@ -44,6 +45,9 @@ class SplashFragment : Fragment() {
             }
         }
     }
+    private fun checkOnboardingStatus(){
+        //TODO check onboarding status of User possibly store local variable
+    }
 
     private fun navigateToSignIn() {
         startActivity(Intent(requireActivity(),AuthActivity::class.java))
@@ -51,6 +55,10 @@ class SplashFragment : Fragment() {
 
     private fun navigateToHome(){
         startActivity(Intent(requireActivity(),HomeActivity::class.java))
+    }
+
+    private fun navigateToOnBoarding(){
+        startActivity(Intent(requireActivity(),OnboardingActivity::class.java))
     }
 
 }
