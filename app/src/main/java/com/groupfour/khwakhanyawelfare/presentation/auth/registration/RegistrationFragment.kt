@@ -49,7 +49,7 @@ private fun initObservers(){
     private fun initListeners(){
        binding.apply {
            registerBtn.setOnClickListener {
-              if (validateUsername() &&  validateEmail() && validateFirstPassword() && validateSecondPassword() && checkPasswordsMatch()){
+              if (validateEmail() && validateFirstPassword() && validateSecondPassword() && checkPasswordsMatch()){
                   progressBar.isVisible = true
                   viewModel.registerUser(binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
               }
@@ -61,27 +61,27 @@ private fun initObservers(){
        }
     }
 
-    private fun validateUsername():Boolean{
-        val username = binding.usernameEditText.text.toString()
-        val pattern = "^[A-Za-z]\\w{5,29}$"
-        if (username.isEmpty() || username.isBlank() ){
-           binding.usernameEditText.error = "Please enter a username" //TODO USE STRINGS
-            return false
-        }
-        else if(!Pattern.compile(pattern).matcher(username).matches()) {
-            val errorText = when {
-               !username.matches(Regex("^[A-Za-z].*")) -> "Username must start with a letter."
-                username.length !in 6..30 -> "Username must be between 6 and 30 characters long."
-                !username.matches(Regex("^[A-Za-z]\\\\w{5,29}\$")) -> "Username can only contain letters, digits, and underscores."
-                else -> ""
-            }
-            binding.usernameEditText.error = errorText
-            return false
-        }
-        else{
-            return true
-        }
-    }
+//    private fun validateUsername():Boolean{
+//        val username = binding.usernameEditText.text.toString()
+//        val pattern = "^[A-Za-z]\\w{5,29}$"
+//        if (username.isEmpty() || username.isBlank() ){
+//           binding.usernameEditText.error = "Please enter a username" //TODO USE STRINGS
+//            return false
+//        }
+//        else if(!Pattern.compile(pattern).matcher(username).matches()) {
+//            val errorText = when {
+//               !username.matches(Regex("^[A-Za-z].*")) -> "Username must start with a letter."
+//                username.length !in 6..30 -> "Username must be between 6 and 30 characters long."
+//                !username.matches(Regex("^[A-Za-z]\\\\w{5,29}\$")) -> "Username can only contain letters, digits, and underscores."
+//                else -> ""
+//            }
+//            binding.usernameEditText.error = errorText
+//            return false
+//        }
+//        else{
+//            return true
+//        }
+//    }
     private fun validateEmail():Boolean{
         val email = binding.emailEditText.text.toString()
         val pattern = Patterns.EMAIL_ADDRESS

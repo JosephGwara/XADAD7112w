@@ -41,34 +41,7 @@
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:id="@+id/username_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/username_txt"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/username_edit_text"
-            app:layout_constraintStart_toStartOf="parent"
-            />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/username_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:textSize="25sp"
-            android:hint="@string/your_username_txt"
-            android:autofillHints="username"
-            app:layout_constraintTop_toBottomOf="@+id/create_account_title"
-            android:layout_marginTop="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
         <com.google.android.material.textview.MaterialTextView
             style="@style/TextAppearance.Material3.BodyLarge"
             android:id="@+id/email_label"
@@ -89,7 +62,7 @@
             android:textSize="25sp"
             android:hint="@string/your_email_txt"
             android:autofillHints="emailAddress"
-            app:layout_constraintTop_toBottomOf="@+id/username_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/create_account_title"
             android:layout_marginTop="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
