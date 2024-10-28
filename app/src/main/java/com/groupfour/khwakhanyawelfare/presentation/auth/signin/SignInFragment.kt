@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -16,13 +18,12 @@ import com.groupfour.khwakhanyawelfare.databinding.FragmentSignInBinding
 import com.groupfour.khwakhanyawelfare.presentation.home.HomeActivity
 import com.groupfour.khwakhanyawelfare.presentation.onboarding.OnboardingActivity
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
     private val viewModel: SignInViewModel by viewModels()
-
-    //TODO Override back button to prevent back navigation
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,9 +35,36 @@ class SignInFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        handleOnBack()
         initListeners()
         initObservers()
     }
+    private fun handleOnBack() {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            requireActivity(), object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    displayExitDialogue()
+                }
+            })
+    }
+    private fun displayExitDialogue(){
+        val alertDialog = AlertDialog.Builder(requireContext())
+        alertDialog.apply {
+            setTitle(getString(R.string.exit_app))
+            setMessage(getString(R.string.exit_the_app))
+            setPositiveButton(getString(R.string.yes)){ _, _ ->
+                exitApp()
+            }
+            setNegativeButton(getString(R.string.no)) { _, _ ->
+
+            }
+        }.create().show()
+
+    }
+    private fun exitApp(){
+        requireActivity().finishAffinity()
+    }
+
 
     private fun initListeners(){
         binding.apply {
@@ -59,12 +87,14 @@ class SignInFragment : Fragment() {
         viewModel.signInError.observe(viewLifecycleOwner){ error ->
             hideProgressBar()
             Snackbar.make(binding.root,error, Snackbar.LENGTH_SHORT).show()
+            resetFields()
+
         }
         viewModel.signInSuccessful.observe(viewLifecycleOwner){ isSuccessful ->
            if (isSuccessful){
                checkOnBoardingStatus()
+               resetFields()
            }
-            //TODO Add Clear fields after unssuccessful signIn and navigation Away
         }
         viewModel.isUserOnboarded.observe(viewLifecycleOwner){ onboarded ->
             if (!onboarded){
@@ -92,10 +122,10 @@ class SignInFragment : Fragment() {
         val email = binding.emailEditText.text.toString()
         val pattern = Patterns.EMAIL_ADDRESS
         if (email.isEmpty() || email.isBlank()){
-            binding.emailEditText.error = "Please enter an email"
+            binding.emailEditText.error = getString(R.string.please_enter_an_email)
             return false
         }else if (!pattern.matcher(email).matches()){
-            binding.emailEditText.error = "Please enter a valid email"
+            binding.emailEditText.error = getString(R.string.please_enter_a_valid_email)
             return false
         }
         else{
@@ -107,7 +137,7 @@ class SignInFragment : Fragment() {
         if (password.isNotEmpty() || password.isNotBlank()){
             return true
         }else{
-            binding.passwordEditText.error = "Please enter a password"
+            binding.passwordEditText.error = getString(R.string.please_enter_a_password)
             return false
         }
     }
@@ -116,6 +146,10 @@ class SignInFragment : Fragment() {
     }
     private fun hideProgressBar(){
         binding.progressBar.isVisible = false
+    }
+    private fun resetFields(){
+        binding.emailEditText.text?.clear()
+        binding.passwordEditText.text?.clear()
     }
 
 

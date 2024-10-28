@@ -16,7 +16,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignInViewModel @Inject constructor(private val firestore: FirebaseFirestore, private val firebaseAuth: FirebaseAuth): ViewModel() {
-private val TAG = this.javaClass.name
+
+    private val TAG = this.javaClass.name
+
     private var _signInError = MutableLiveData<String>()
     val signInError: LiveData<String> get() = _signInError
 
@@ -52,7 +54,7 @@ private val TAG = this.javaClass.name
                 if (document != null && document.exists()){
                     val user = document.toObject(User::class.java)
                     if (user != null) {
-                        if (!user.onboardingComplete){
+                        if (user.onboardingComplete == true){
                             _isUserOnboarded.postValue(true)
                         }
                         else{

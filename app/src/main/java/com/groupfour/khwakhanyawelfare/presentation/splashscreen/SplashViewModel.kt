@@ -17,6 +17,7 @@ class SplashViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth
     private var _userAuthenticated= MutableLiveData<Boolean>()
     val userAuthenticated: LiveData<Boolean> get() = _userAuthenticated
 
+    //Check onboarding complete
     fun checkAuthStatus() = viewModelScope.launch {
         try {
             val currentUser = firebaseAuth.currentUser

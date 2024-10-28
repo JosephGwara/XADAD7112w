@@ -16,4 +16,11 @@
     <string name="forgot_password_txt">Forgot password?</string>
     <string name="reset_password">Reset Password</string>
     <string name="back">Back</string>
+    <string name="exit_app">Exit App?</string>
+    <string name="exit_the_app">Would you like to exit the app?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="please_enter_a_password">Please enter a password</string>
+    <string name="please_enter_an_email">Please enter an email</string>
+    <string name="please_enter_a_valid_email">Please enter a valid email</string>
 </resources>

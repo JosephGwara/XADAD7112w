@@ -25,8 +25,9 @@ class OnboardingViewModel  @Inject constructor(private val firebaseAuth: Firebas
         val userEmail = firebaseAuth.currentUser?.email
         if (userEmail != null){
             val user = User(userEmail,userType,true)
+
             firestore.collection(Constants.FIREBASE_USER_COLLECTION)
-                .add(user)
+                .document(userEmail).set(user)
                 .addOnSuccessListener { documentReference ->
                     Timber.d("$documentReference")
                     _onBoardingComplete.postValue(true)
