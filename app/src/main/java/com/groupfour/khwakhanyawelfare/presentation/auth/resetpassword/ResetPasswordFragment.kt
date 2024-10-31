@@ -17,6 +17,10 @@ class ResetPasswordFragment : Fragment() {
     private val viewModel: ResetPasswordViewModel by viewModels()
     private lateinit var binding:FragmentResetPasswordBinding
 
+    /*
+    *  TODO Implement reset password functionality
+    *
+    * */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

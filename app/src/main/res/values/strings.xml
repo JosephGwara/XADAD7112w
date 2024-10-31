@@ -23,4 +23,9 @@
     <string name="please_enter_a_password">Please enter a password</string>
     <string name="please_enter_an_email">Please enter an email</string>
     <string name="please_enter_a_valid_email">Please enter a valid email</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="donor">Donor</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="name">Name</string>
+    <string name="continue_btn_text">Continue</string>
 </resources>

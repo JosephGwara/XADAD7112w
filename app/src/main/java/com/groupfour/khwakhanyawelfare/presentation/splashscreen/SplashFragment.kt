@@ -46,7 +46,13 @@ class SplashFragment : Fragment() {
         }
     }
     private fun checkOnboardingStatus(){
-        //TODO check onboarding status of User possibly store local variable
+        /*
+        *  TODO check onboarding status of User possibly store local variable use shared prefs to store a boolean
+        *    so that no network calls should be done,store user data in local db parallel refactor
+        *    reading and writing to database repository.
+        *
+        *
+        * */
     }
 
     private fun navigateToSignIn() {

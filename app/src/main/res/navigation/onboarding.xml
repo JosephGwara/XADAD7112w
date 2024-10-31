@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/onboarding"
     app:startDestination="@id/onboardingFragment">
 
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.OnboardingFragment"
-        android:label="OnboardingFragment" />
+        android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.usertype.UserTypeFragment"
+        android:label="OnboardingFragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.profile.CreateProfileFragment"
+        android:label="fragment_create_profile"
+        tools:layout="@layout/fragment_create_profile" />
 </navigation>
