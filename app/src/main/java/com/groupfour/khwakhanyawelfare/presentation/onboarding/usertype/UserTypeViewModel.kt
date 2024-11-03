@@ -16,27 +16,4 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class UserTypeViewModel  @Inject constructor(private val firebaseAuth: FirebaseAuth, private val firestore: FirebaseFirestore) : ViewModel() {
-
-    private var _onBoardingComplete = MutableLiveData<Boolean>()
-    val onBoardingComplete: LiveData<Boolean> get() = _onBoardingComplete
-
-
-    // TODO Move to last onboarding screen
-     fun onOnboardingComplete(userType: UserType) = viewModelScope.launch(Dispatchers.IO) {
-        val userEmail = firebaseAuth.currentUser?.email
-        if (userEmail != null){
-            val user = User(email = userEmail,userType=userType)
-
-            firestore.collection(Constants.FIREBASE_USER_COLLECTION)
-                .document(userEmail).set(user)
-                .addOnSuccessListener { documentReference ->
-                    Timber.d("$documentReference")
-                    _onBoardingComplete.postValue(true)
-                }
-                .addOnFailureListener { e->
-                    Timber.e(e)
-                }
-        }
-    }
-}
+class UserTypeViewModel  @Inject constructor() : ViewModel() {}

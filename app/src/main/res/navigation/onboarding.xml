@@ -17,5 +17,14 @@
         android:id="@+id/createProfileFragment"
         android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.profile.CreateProfileFragment"
         android:label="fragment_create_profile"
-        tools:layout="@layout/fragment_create_profile" />
+        tools:layout="@layout/fragment_create_profile" >
+        <action
+            android:id="@+id/action_createProfileFragment_to_onboardingEndFragment"
+            app:destination="@id/onboardingEndFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingEndFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.onboarding_end.OnboardingEndFragment"
+        android:label="fragment_onboarding_end"
+        tools:layout="@layout/fragment_onboarding_end" />
 </navigation>

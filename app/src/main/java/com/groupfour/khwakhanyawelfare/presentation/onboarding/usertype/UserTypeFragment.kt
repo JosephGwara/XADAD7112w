@@ -31,16 +31,9 @@ class UserTypeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupObservers()
         setupListeners()
     }
 
-    private fun setupObservers() {
-        // TODO Move to end of onboarding
-        viewModel.onBoardingComplete.observe(viewLifecycleOwner){
-            navigateToHome()
-        }
-    }
 
     private fun setupListeners() {
         binding.apply {
@@ -64,16 +57,13 @@ class UserTypeFragment : Fragment() {
     *    Beneficiary notification of donation ,view donation
     *    donation tracker,make donation ,khwakhanya employee marks as received, beneficiary receives and notification if kicked off
     *    Make splash screen look better
+    *    Beneficiaries can make requests?Causes that donors can view
     *
     *
     *
     *
     * */
 
-    private fun navigateToHome(){
-        startActivity(Intent(requireContext(),HomeActivity::class.java))
-        requireActivity().finish()
-    }
 
     private fun navigateToUserProfile(userType: UserType){
         val bundle = Bundle()

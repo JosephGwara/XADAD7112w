@@ -1,5 +1,6 @@
 package com.groupfour.khwakhanyawelfare.data.enums
 
 enum class UserType {
-    DONOR,BENEFICIARY,EMPLOYEE
+    DONOR,BENEFICIARY,EMPLOYEE,ANONYMOUS
 }
+
