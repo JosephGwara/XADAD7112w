@@ -28,4 +28,8 @@
     <string name="create_profile">Create Profile</string>
     <string name="name">Name</string>
     <string name="continue_btn_text">Continue</string>
+    <string name="khwakhanya_welfare">Khwakhanya Welfare</string>
+    <string name="beneficiaries">Beneficiaries</string>
+    <string name="home">Home</string>
+    <string name="donation_history">Donation History</string>
 </resources>

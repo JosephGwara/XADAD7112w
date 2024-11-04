@@ -16,7 +16,6 @@ import timber.log.Timber
 @AndroidEntryPoint
 class CreateProfileFragment : Fragment() {
 
-
     private val viewModel: CreateProfileViewModel by viewModels()
     private lateinit var binding:FragmentCreateProfileBinding
 
@@ -37,7 +36,6 @@ class CreateProfileFragment : Fragment() {
     private fun setupListeners(){
         binding.continueBtn.setOnClickListener {
             saveUserDetails(binding.nameEditText.text.toString(),binding.phoneNumberEdittext.text.toString())
-            // TODO local storage for the same data that's being sent to the cloud database
         }
     }
     private fun setupObservers() {
@@ -47,7 +45,7 @@ class CreateProfileFragment : Fragment() {
     }
 
     private fun navigateToOnboardingEnd() {
-findNavController().navigate(R.id.action_createProfileFragment_to_onboardingEndFragment)
+        findNavController().navigate(R.id.action_createProfileFragment_to_onboardingEndFragment)
     }
 
 

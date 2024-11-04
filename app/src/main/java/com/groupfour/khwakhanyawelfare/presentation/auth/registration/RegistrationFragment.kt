@@ -131,6 +131,8 @@ private fun initObservers(){
             return true
         }
     }
+
+    //TODO ADD Passwords don't match error
     private fun checkPasswordsMatch():Boolean{
         return binding.passwordEditText.text.toString() == binding.passwordConfirmEditText.text.toString()
     }
