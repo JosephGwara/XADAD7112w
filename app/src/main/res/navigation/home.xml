@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.groupfour.khwakhanyawelfare.presentation.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_beneficiariesFragment"
+            app:destination="@id/beneficiariesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beneficiariesFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.beneficiaries.BeneficiariesFragment"
+        android:label="fragment_beneficiaries"
+        tools:layout="@layout/fragment_beneficiaries" >
+        <action
+            android:id="@+id/action_beneficiariesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_beneficiariesFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.transaction_history.TransactionHistoryFragment"
+        android:label="fragment_transaction_history"
+        tools:layout="@layout/fragment_transaction_history" >
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_beneficiariesFragment"
+            app:destination="@id/beneficiariesFragment" />
+    </fragment>
 </navigation>
