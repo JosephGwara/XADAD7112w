@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
@@ -74,10 +75,27 @@ class HomeFragment : Fragment() {
 
     private fun initListeners(){
         binding.apply {
-            signOutBtn.setOnClickListener {
-                viewModel.signOutUser()
+            menu.setOnClickListener {
+                showMenu()
             }
         }
+    }
+
+    private fun showMenu(){
+        val popupMenu = PopupMenu(layoutInflater.context,binding.menu)
+        popupMenu.menu.add("Sign Out?")
+
+        popupMenu.setOnMenuItemClickListener { item ->
+            if (item.title == "Sign Out?") {
+                signUserOut()
+            }
+            false
+        }
+        popupMenu.show()
+    }
+
+    private fun signUserOut(){
+        viewModel.signOutUser()
     }
 
 }

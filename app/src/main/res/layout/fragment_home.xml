@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
@@ -19,6 +20,18 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/baseline_menu_24"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/menu"
         />
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/top_divider"
@@ -47,6 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:id="@+id/total_beneficiaries_title"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
@@ -75,13 +90,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/sign_out_btn"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:text="sign out"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
