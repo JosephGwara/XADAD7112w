@@ -21,10 +21,22 @@
         <action
             android:id="@+id/action_createProfileFragment_to_onboardingEndFragment"
             app:destination="@id/onboardingEndFragment" />
+        <action
+            android:id="@+id/action_createProfileFragment_to_beneficiaryDetailsFragment"
+            app:destination="@id/beneficiaryDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingEndFragment"
         android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.onboarding_end.OnboardingEndFragment"
         android:label="fragment_onboarding_end"
         tools:layout="@layout/fragment_onboarding_end" />
+    <fragment
+        android:id="@+id/beneficiaryDetailsFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.onboarding.beneficiary_details.BeneficiaryDetailsFragment"
+        android:label="fragment_beneficiary_details"
+        tools:layout="@layout/fragment_beneficiary_details" >
+        <action
+            android:id="@+id/action_beneficiaryDetailsFragment_to_onboardingEndFragment"
+            app:destination="@id/onboardingEndFragment" />
+    </fragment>
 </navigation>

@@ -32,4 +32,22 @@
     <string name="beneficiaries">Beneficiaries</string>
     <string name="home">Home</string>
     <string name="donation_history">Donation History</string>
+    <string name="this_beneficiary_needs">This beneficiary needs a</string>
+    <string name="school">School</string>
+    <string name="monetary">Monetary</string>
+    <string name="donation">donation</string>
+    <string name="your_age">Your Age</string>
+    <string name="age">Age</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="your_full_name">Your full name</string>
+    <string name="your_school">Your School</string>
+    <string name="a_few_more_details">A few more details</string>
+    <string name="what_do_you_need_assistance_with">What do you need assistance with?</string>
+    <string-array name="donation_types">
+        <item>MONETARY</item>
+        <item>FOOD</item>
+        <item>TIME</item>
+        <item>CLOTHING</item>
+    </string-array>
 </resources>

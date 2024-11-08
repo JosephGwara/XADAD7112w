@@ -18,6 +18,7 @@ class TransactionHistoryFragment : Fragment() {
     private lateinit var binding:FragmentTransactionHistoryBinding
 
 
+    //TODO SHOW all Donations Made by the user
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
