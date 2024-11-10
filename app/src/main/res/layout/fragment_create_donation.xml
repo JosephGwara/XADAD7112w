@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.transaction_history.TransactionHistoryFragment">
+    tools:context=".presentation.create_donation.CreateDonationFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recyclerContainer"
         android:layout_marginBottom="70dp"
@@ -37,6 +37,7 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </ScrollView>

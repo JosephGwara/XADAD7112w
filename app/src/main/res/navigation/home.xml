@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
             app:destination="@id/transactionHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createDonationFragment"
+            app:destination="@id/createDonationFragment" />
     </fragment>
     <fragment
         android:id="@+id/beneficiariesFragment"
@@ -40,4 +43,9 @@
             android:id="@+id/action_transactionHistoryFragment_to_beneficiariesFragment"
             app:destination="@id/beneficiariesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/createDonationFragment"
+        android:name="com.groupfour.khwakhanyawelfare.presentation.create_donation.CreateDonationFragment"
+        android:label="fragment_create_donation"
+        tools:layout="@layout/fragment_create_donation" />
 </navigation>

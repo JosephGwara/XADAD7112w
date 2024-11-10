@@ -1,5 +1,6 @@
 package com.groupfour.khwakhanyawelfare.presentation.beneficiaries
 
+import android.content.Intent
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.groupfour.khwakhanyawelfare.data.models.User
 import com.groupfour.khwakhanyawelfare.databinding.FragmentBeneficiariesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,6 +39,11 @@ class BeneficiariesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getBeneficiaries()
         setupObservers()
+        initListeners()
+    }
+
+    private fun initListeners() {
+
     }
 
     private fun getBeneficiaries(){
@@ -50,7 +57,6 @@ class BeneficiariesFragment : Fragment() {
 
     private fun setupObservers(){
         viewModel.beneficiariesList.observe(viewLifecycleOwner){ users ->
-
             if (users != null){
                 toggleProgressBar(false)
                 val adapter = BeneficiariesAdapter(users)

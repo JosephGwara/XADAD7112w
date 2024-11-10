@@ -4,11 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
-    android:layout_marginBottom="70dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.home.HomeFragment">
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_marginTop="20dp"
         android:id="@+id/title_txt"
         android:layout_width="match_parent"
@@ -59,7 +58,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:id="@+id/total_beneficiaries_title"
@@ -91,5 +90,15 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_donation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="75dp"
+        android:layout_gravity="end|bottom"
+        android:contentDescription="FAB"
+        android:src="@drawable/ic_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

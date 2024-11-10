@@ -8,14 +8,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.PopupMenu
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import com.groupfour.khwakhanyawelfare.R
 import com.groupfour.khwakhanyawelfare.databinding.FragmentHomeBinding
 import com.groupfour.khwakhanyawelfare.presentation.auth.AuthActivity
+import com.groupfour.khwakhanyawelfare.presentation.create_donation.CreateDonationActivity
 
 
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,6 +35,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
+        val params: ConstraintLayout.LayoutParams = ConstraintLayout.LayoutParams(
+            MATCH_PARENT, MATCH_PARENT
+        )
+        binding.root.layoutParams = params
         handleOnBack()
         return binding.root
     }
@@ -78,6 +86,10 @@ class HomeFragment : Fragment() {
             menu.setOnClickListener {
                 showMenu()
             }
+            addDonationButton.setOnClickListener {
+                navigateToCreateDonation()
+            }
+
         }
     }
 
@@ -96,6 +108,10 @@ class HomeFragment : Fragment() {
 
     private fun signUserOut(){
         viewModel.signOutUser()
+    }
+    private fun navigateToCreateDonation(){
+       startActivity(Intent(requireActivity(),CreateDonationActivity::class.java))
+        requireActivity().finish()
     }
 
 }
