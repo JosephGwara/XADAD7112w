@@ -132,9 +132,12 @@ private fun initObservers(){
         }
     }
 
-    //TODO ADD Passwords don't match error
     private fun checkPasswordsMatch():Boolean{
-        return binding.passwordEditText.text.toString() == binding.passwordConfirmEditText.text.toString()
+        val passwordsMatch = binding.passwordEditText.text.toString() == binding.passwordConfirmEditText.text.toString()
+        if (!passwordsMatch){
+            binding.passwordConfirmEditText.error = "Passwords don't match"
+        }
+        return passwordsMatch
     }
 
 

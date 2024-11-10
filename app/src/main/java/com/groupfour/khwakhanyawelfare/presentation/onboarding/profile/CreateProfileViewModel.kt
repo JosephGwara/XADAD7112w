@@ -17,6 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CreateProfileViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth, private val firestore: FirebaseFirestore) : ViewModel() {
+
     private var _onBoardingComplete = MutableLiveData<Boolean>()
     val onBoardingComplete: LiveData<Boolean> get() = _onBoardingComplete
 
