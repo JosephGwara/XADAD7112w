@@ -17,6 +17,8 @@
         android:text="@string/are_you_a_donor_or_a_beneficiary"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

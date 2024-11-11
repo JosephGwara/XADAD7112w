@@ -49,6 +49,9 @@
     <string name="name_colon">Name:</string>
     <string name="age_colon">Age:</string>
     <string name="school_colon">School:</string>
+    <string name="donation_plea_text">Your support can make a difference! By donating today, you’ll help us continue our mission to provide essential resources and make a positive impact in our community. Every contribution, no matter the size, brings us closer to creating lasting change. Join us in making a difference—donate now and be a part of something meaningful!</string>
+    <string name="make_a_donation">Make a donation</string>
+    <string name="what_would_you_like_to_donate">What would you like to donate?</string>
     <string-array name="donation_types">
         <item>MONETARY</item>
         <item>FOOD</item>

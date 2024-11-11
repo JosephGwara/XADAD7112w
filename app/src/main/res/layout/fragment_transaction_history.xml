@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/khwakhanya_welfare"
+            android:text="@string/donation_history"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="center"

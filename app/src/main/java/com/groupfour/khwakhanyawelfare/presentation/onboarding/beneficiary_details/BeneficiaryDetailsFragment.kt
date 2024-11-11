@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -67,11 +68,10 @@ class BeneficiaryDetailsFragment : Fragment() {
 
     private fun setupListeners() {
         binding.apply {
-//TODO Fix drop down value
-            needTypeTxt.text = needSelect.selectedItem .toString()
 
             continueBtn.setOnClickListener {
                 saveUserDetails()
+                toggleProgressBar(true)
             }
         }
     }
@@ -83,15 +83,18 @@ class BeneficiaryDetailsFragment : Fragment() {
     private fun setupNeedSelector(){
         val myAdapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_list_item_1,
+            R.layout.dropdown_item,
             resources.getStringArray(R.array.donation_types)
         )
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.needSelect.setAdapter(myAdapter)
+        binding.needSelectChoice.setAdapter(myAdapter)
+    }
+    private fun toggleProgressBar(visible:Boolean){
+        binding.progressBar.isVisible = visible
     }
 
     private fun saveUserDetails(){
-        donationTypeString = binding.needTypeTxt.text.toString()
+        donationTypeString = binding.needSelectChoice.text.toString()
         donationType = when(donationTypeString){
             "MONETARY" -> DonationType.MONETARY
             "FOOD" -> DonationType.FOOD
