@@ -55,10 +55,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
+        app:cardBackgroundColor="@color/md_theme_primaryContainer"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total_beneficiaries_title"
+                android:visibility="visible"
+                />
             <com.google.android.material.textview.MaterialTextView
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -68,7 +79,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="Total Beneficiaries Assisted"
+                android:textColor="@color/md_theme_onPrimary"
+                android:text="Total Beneficiaries Needing Help"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -80,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:text="000000"
+                android:text="0"
+                android:textColor="@color/md_theme_onPrimary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/total_beneficiaries_title"

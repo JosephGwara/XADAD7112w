@@ -14,6 +14,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.groupfour.khwakhanyawelfare.R
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getBeneficiariesCount()
        initListeners()
        initObservers()
     }
@@ -61,6 +63,19 @@ class HomeFragment : Fragment() {
         viewModel.userSignedOut.observe(viewLifecycleOwner){ userSignedOut ->
             if (userSignedOut) navigateToSignIn()
         }
+        viewModel.beneficiariesList.observe(viewLifecycleOwner){ beneficiariesCount ->
+            if (beneficiariesCount != null ){
+                toggleProgressBar(false)
+                binding.totalBeneficiariesNumber.isVisible = true
+                binding.totalBeneficiariesNumber.text = beneficiariesCount.toString()
+            }
+        }
+    }
+
+    private fun getBeneficiariesCount(){
+        toggleProgressBar(true)
+        binding.totalBeneficiariesNumber.isVisible = false
+        viewModel.getBeneficiaries()
     }
 
     private fun navigateToSignIn() {
@@ -112,6 +127,10 @@ class HomeFragment : Fragment() {
     private fun navigateToCreateDonation(){
        startActivity(Intent(requireActivity(),CreateDonationActivity::class.java))
         requireActivity().finish()
+    }
+
+    private fun toggleProgressBar(visible:Boolean){
+        binding.progressBar.isVisible = visible
     }
 
 }
