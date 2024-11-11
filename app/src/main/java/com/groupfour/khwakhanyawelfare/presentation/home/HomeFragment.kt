@@ -130,7 +130,6 @@ class HomeFragment : Fragment() {
     }
     private fun navigateToCreateDonation(){
        startActivity(Intent(requireActivity(),CreateDonationActivity::class.java))
-        requireActivity().finish()
     }
 
     private fun toggleProgressBar(visible:Boolean){

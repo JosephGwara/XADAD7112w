@@ -65,7 +65,6 @@ class CreateDonationFragment : Fragment() {
             setMessage("The donation was made at ${donation.timestamp?.let { convertLongToTime(it) }}")
             setCancelable(false)
             setPositiveButton("Ok"){ _, _ ->
-                requireActivity().finish()
             }
         }.create().show()
     }
