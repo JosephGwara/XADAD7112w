@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="@id/user"
         app:layout_constraintEnd_toEndOf="@id/user"
         android:id="@+id/username"
-        android:text="Joseph Gwara"
+        android:text=""
         android:textSize="35sp"
         android:textStyle="bold"
         android:textColor="@color/md_theme_primary"

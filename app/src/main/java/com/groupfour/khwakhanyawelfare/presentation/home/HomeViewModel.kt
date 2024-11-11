@@ -24,6 +24,9 @@ class HomeViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth,p
     private var _beneficiariesList = MutableLiveData<Int>()
     val beneficiariesList: LiveData<Int> get() = _beneficiariesList
 
+    private var _userName = MutableLiveData<String?>()
+    val userName: LiveData<String?> get() = _userName
+
     fun signOutUser() = viewModelScope.launch {
       try {
           firebaseAuth.signOut()
@@ -52,6 +55,23 @@ class HomeViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth,p
             .addOnFailureListener {
                 Timber.tag("JosephGwara").d("Error Fetching data Beneficiaries VM")
             }
+    }
+
+    fun getUserName()= viewModelScope.launch (Dispatchers.IO){
+        val userEmail = firebaseAuth.currentUser?.email
+        if (userEmail != null){
+            firestore.collection(Constants.FIREBASE_USER_COLLECTION)
+                .document(userEmail)
+                .get()
+                .addOnSuccessListener { document ->
+                    val user = document.toObject(User::class.java)
+                    if (user != null){
+                        _userName.postValue(user.name)
+                    }
+
+
+                }
+        }
     }
 
 
