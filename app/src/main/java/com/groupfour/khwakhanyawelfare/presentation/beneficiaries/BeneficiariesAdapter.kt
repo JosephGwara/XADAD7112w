@@ -25,6 +25,7 @@ class BeneficiariesAdapter(private val beneficiariesList:List<User>):RecyclerVie
             with(beneficiariesList[position]){
                 binding.nameTxt.text = this.name
                 binding.schoolTxt.text = this.school
+                binding.ageTxt.text = this.age
                 binding.needTxt.text = this.donationNeeded.toString()
 
                 itemView.setOnClickListener {

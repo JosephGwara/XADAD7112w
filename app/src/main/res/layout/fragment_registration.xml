@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.auth.registration.RegistrationFragment">
    <ProgressBar
@@ -150,9 +151,8 @@
                 android:text="@string/already_have_an_account_txt"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginBottom="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -166,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/log_in_txt"
                 android:textSize="12sp"
+                android:textColor="@color/md_theme_secondary"
                 android:textStyle="bold"
                 android:focusable="true"
                 android:clickable="true"

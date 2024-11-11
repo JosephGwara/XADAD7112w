@@ -44,6 +44,11 @@
     <string name="your_school">Your School</string>
     <string name="a_few_more_details">A few more details</string>
     <string name="what_do_you_need_assistance_with">What do you need assistance with?</string>
+    <string name="are_you_a_donor_or_a_beneficiary">Are you a Donor or a Beneficiary?</string>
+    <string name="all_done_lets_go">All Done Lets go</string>
+    <string name="name_colon">Name:</string>
+    <string name="age_colon">Age:</string>
+    <string name="school_colon">School:</string>
     <string-array name="donation_types">
         <item>MONETARY</item>
         <item>FOOD</item>

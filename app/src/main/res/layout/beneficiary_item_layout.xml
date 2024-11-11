@@ -7,8 +7,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="5dp"
     app:cardCornerRadius="16dp"
+    android:theme="@style/AppTheme"
     app:cardMaxElevation="5dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/md_theme_secondaryContainer"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,49 +22,97 @@
         <com.google.android.material.imageview.ShapeableImageView
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="80dp"
             android:id="@+id/imageview"
             android:layout_width="40dp"
+            android:tint="@color/md_theme_onPrimary"
             android:src="@drawable/ic_beneficiary"
             android:layout_height="40dp"
             />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/bill_name_txt"
+            android:id="@+id/beneficiary_title_txt"
+            android:textColor="@color/md_theme_onPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            android:layout_marginTop="20dp"
             app:layout_constraintStart_toEndOf="@id/imageview"
-            app:layout_constraintTop_toTopOf="parent"
-
+            app:layout_constraintTop_toTopOf="@id/imageview"
+            app:layout_constraintBottom_toBottomOf="@+id/imageview"
             android:text="@string/beneficiary"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/name_txt"
+            android:id="@+id/name_lbl"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bill_name_txt"
+            app:layout_constraintTop_toBottomOf="@+id/beneficiary_title_txt"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
+            android:text="@string/name_colon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onPrimary"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name_txt"
+            app:layout_constraintStart_toEndOf="@+id/name_lbl"
+            app:layout_constraintTop_toTopOf="@+id/name_lbl"
+            app:layout_constraintBottom_toBottomOf="@+id/name_lbl"
+            android:layout_marginStart="5dp"
             android:text="@string/name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+          android:textColor="@color/md_theme_onPrimary"
+            />
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/school_txt"
+            android:id="@+id/age_lbl"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name_txt"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/school"
+            android:text="@string/age_colon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onPrimary"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/age_txt"
+            app:layout_constraintStart_toEndOf="@+id/age_lbl"
+            app:layout_constraintTop_toTopOf="@+id/age_lbl"
+            app:layout_constraintBottom_toBottomOf="@+id/age_lbl"
+            android:layout_marginStart="5dp"
+            android:text="@string/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onPrimary"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/school_lbl"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/age_lbl"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/school_colon"
+            android:textColor="@color/md_theme_onPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/school_txt"
+            app:layout_constraintStart_toEndOf="@+id/school_lbl"
+            app:layout_constraintTop_toTopOf="@+id/school_lbl"
+            app:layout_constraintBottom_toBottomOf="@+id/school_lbl"
+            android:layout_marginStart="5dp"
+            android:text="@string/school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onPrimary"
+            />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/need_label"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +120,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
+            android:textColor="@color/md_theme_onPrimary"
             android:text="@string/this_beneficiary_needs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -80,6 +132,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold"
+            android:textColor="@color/md_theme_onPrimary"
             android:text="@string/monetary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,6 +146,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="@string/donation"
+            android:textColor="@color/md_theme_onPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

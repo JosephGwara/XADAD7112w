@@ -15,4 +15,7 @@
     <string name="forgot_password_txt">Forgot password?</string>
     <string name="reset_password">Reset Password</string>
     <string name="back">Back</string>
+    <string name="are_you_a_donor_or_a_beneficiary">Are you a Donor or a Beneficiary?</string>
+    <string name="all_done_lets_go">All Done Lets go</string>
+    <string name="school_colon">School:</string>
 </resources>

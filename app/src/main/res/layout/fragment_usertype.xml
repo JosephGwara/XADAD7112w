@@ -5,13 +5,16 @@
     android:id="@+id/onboarding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
     tools:context=".presentation.onboarding.usertype.UserTypeFragment">
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/message"
+        android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Onboarding Screen One"
+        android:text="@string/are_you_a_donor_or_a_beneficiary"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,12 +26,14 @@
         android:layout_width="match_parent"
         app:layout_constraintTop_toBottomOf="@id/message"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="@color/md_theme_primaryContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
+        app:cardElevation="6dp"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,6 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="50sp"
+                android:textColor="@color/md_theme_onPrimary"
                 android:text="@string/donor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +61,11 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="@color/md_theme_secondaryContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
+        app:cardElevation="5dp"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -67,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="50sp"
                 android:text="@string/beneficiary"
+                android:textColor="@color/md_theme_onSecondary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
